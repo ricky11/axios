@@ -4,7 +4,9 @@ import axios from 'axios'
 import router from './router'
 import store from './store'
 
-axios.defaults.baseURL ='https://axios-42402.firebaseio.com'
+//axios.defaults.baseURL ='https://axios-42402.firebaseio.com'
+//axios.defaults.baseURL ='https://axios-42402.firebaseio.com'
+
 axios.defaults.headers.common['Auth'] = "test header"
 axios.defaults.headers.get['Accedddpts'] = 'application/json'
 

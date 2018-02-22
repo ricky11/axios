@@ -17,39 +17,27 @@ export default {
   },
   created() {
     console.log("RUNNING CREATED")
-    axios
-      .get("/users.json")
-      .then(res => {
-        const data = res.data
-        const users = []
+    // axios
+    //   .get("/users.json")
+    //   .then(res => {
+    //     const data = res.data
+    //     const users = []
     
-        for (let key in data) {
-          const userObj = data[key]
-          userObj.id = key
+    //     for (let key in data) {
+    //       const userObj = data[key]
+    //       userObj.id = key
           
-          users.push(userObj)
+    //       users.push(userObj)
           
-        }
-      this.email = users[0].email
-     // console.log(this.email)
-      //console.table(users)
-      })
-      .catch(err => console.log(`ERROR FOUND ${err}`))
+    //     }
+    //   this.email = users[0].email
+    //   })
+    //   .catch(err => console.log(`ERROR FOUND ${err}`))
 
+axios.post(' https://api.backblazeb2.com/b2api/v1/b2_authorize_account', "659e48410dbb:000ab271593248be7c766d60f851bfb7733cd9bc58")
+        .then(res => console.log(res))
+        .catch(err => console.log(err))
 
-//       const newObj = [
-//         { fname: "rishi", lname: "uttam", email: "rishi@pmgrouphk.com"},
-//         { fname: "jack", lname: "ma", email: 'jack@alibaba.com'},
-//       ]
-
-//         const data = []
-//       for (let key in newObj) {
-//          data.push(newObj[key])
-
-//       }
-// console.table(data)
-// this.email = data[0].email
-// console.log(this.email)
    }
 
 
