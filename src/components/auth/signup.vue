@@ -69,8 +69,8 @@
 </template>
 
 <script>
-import axios from 'axios'
-axios
+import axios from '../../axios-auth.js'
+
   export default {
     data () {
       return {
@@ -105,7 +105,7 @@ axios
           terms: this.terms
         }
         console.log(formData)
-        axios.post('/users.json', formData)
+        axios.post('/signupNewUser?key=AIzaSyAQKOqFJMYju6ukkXshg8WBYeS1gqFTZsM', {email: formData.email,password: formData.password,returnSecureToken: true})
         .then(res => console.log(res))
         .catch(err => console.log(err))
       }
